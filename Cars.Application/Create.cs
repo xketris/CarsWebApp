@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cars.Application.Cars
+namespace Cars.Application
 {
     public class Create
     {

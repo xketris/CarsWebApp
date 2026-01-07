@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 
-namespace Cars.Application.Cars
+namespace Cars.Application
 {
     public class Edit
     {

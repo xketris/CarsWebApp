@@ -1,14 +1,17 @@
+using Cars.API;
 using Cars.Application;
-using Cars.Application.Cars;
+using Cars.Domain;
 using Cars.Infrastructure;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddIdentityServices(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -54,8 +57,10 @@ var services = scope.ServiceProvider;
 try
 {
     var context = services.GetRequiredService<DataContext>();
-    context.Database.Migrate();
-    await Seed.SeedData(context);
+    var userManager = services.GetRequiredService<UserManager<AppUser>>();
+    
+    await context.Database.MigrateAsync();
+    await Seed.SeedData(context, userManager);
 } catch(Exception ex)
 {
     var logger = services.GetRequiredService<ILogger<Program>>();

@@ -1,5 +1,4 @@
 ﻿using Cars.Application;
-using Cars.Application.Cars;
 using Cars.Domain;
 using Cars.Infrastructure;
 using MediatR;

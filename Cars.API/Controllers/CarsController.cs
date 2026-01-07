@@ -2,8 +2,10 @@
 using Cars.Domain;
 using Cars.Infrastructure;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace Cars.API.Controllers
 {
@@ -18,6 +20,7 @@ namespace Cars.API.Controllers
         public async Task<ActionResult<List<Car>>> GetCars()
         {
             var result = await Mediator.Send(new List.Query());
+            Debug.WriteLine("======>" + result.IsSuccess);
             if(result.IsSuccess) return Ok(result.Value);
             return BadRequest(result.Error);
         }

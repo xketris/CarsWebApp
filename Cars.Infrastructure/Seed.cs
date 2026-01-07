@@ -63,10 +63,7 @@ namespace Cars.Infrastructure
                         }
                     }
                 }
-            }
-            ;
-            
-
+            };
         }
     }
 }

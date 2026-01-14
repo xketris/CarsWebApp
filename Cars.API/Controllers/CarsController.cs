@@ -20,7 +20,6 @@ namespace Cars.API.Controllers
         public async Task<ActionResult<List<Car>>> GetCars()
         {
             var result = await Mediator.Send(new List.Query());
-            Debug.WriteLine("======>" + result.IsSuccess);
             if(result.IsSuccess) return Ok(result.Value);
             return BadRequest(result.Error);
         }

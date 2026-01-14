@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
+using System.Diagnostics;
 
 namespace Cars.Application
 {
@@ -30,6 +31,7 @@ namespace Cars.Application
 
             public async Task<Result<Unit>> Handle(Command request, CancellationToken cancellationToken)
             {
+                Debug.WriteLine("====>!!!!!");
                 var car = await _context.Cars.FindAsync(request.Car.Id);
                 if (car == null) return null;
 

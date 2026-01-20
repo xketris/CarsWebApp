@@ -1,4 +1,5 @@
-﻿using Cars.Domain;
+﻿using Cars.Application.Core;
+using Cars.Domain;
 using Cars.Infrastructure;
 using FluentValidation;
 using MediatR;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cars.Application
+namespace Cars.Application.Cars
 {
     public class Create
     {

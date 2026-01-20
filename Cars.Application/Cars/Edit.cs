@@ -9,8 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using System.Diagnostics;
+using Cars.Application.Core;
 
-namespace Cars.Application
+namespace Cars.Application.Cars
 {
     public class Edit
     {

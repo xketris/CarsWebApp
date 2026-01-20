@@ -1,10 +1,11 @@
-﻿using Cars.Domain;
+﻿using Cars.Application.Core;
+using Cars.Domain;
 using Cars.Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
-namespace Cars.Application
+namespace Cars.Application.Cars
 {
     public class List
     {

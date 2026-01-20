@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cars.Application
+namespace Cars.Application.Core
 {
     public class Result<T>
     {

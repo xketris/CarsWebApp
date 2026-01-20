@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Cars.Application.Rentals
 {
-    public class List
+    public class ListRentals
     {
         public class Query : IRequest<Result<List<RentalDTO>>>
         {
